@@ -1,5 +1,6 @@
 import './style.css';
 import { createElement } from './utils/elements';
+import { createCharacter } from './components/character';
 
 const mainElement = createElement('main', {
   className: 'mainPage',
@@ -13,7 +14,18 @@ const mainElement = createElement('main', {
     }),
     createElement('section', {
       className: 'resultsSection',
-      children: [createElement('div', { innerText: 'No results' })],
+      children: [
+        createCharacter({
+          imgSrc: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+          name: 'Morty Smith',
+          status: 'Alive',
+          Species: 'Human',
+          origin: {
+            name: 'Earth',
+            url: 'https://rickandmortyapi.com/api/location/20',
+          },
+        }),
+      ],
     }),
     createElement('footer', {
       className: 'footerSection',
