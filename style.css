@@ -40,12 +40,22 @@ h1 {
   color: var(--primary-text-color);
 }
 
+.searchField {
+  width: 20em;
+  justify-self: center;
+  margin-bottom: 3em;
+}
+
 .resultsSection {
   display: grid;
   background-color: var(--secondary-background-color);
+  min-height: 20em;
+  color: var(--primary-background-color);
+  padding-top: 2em;
 }
 
 .footerSection {
   display: grid;
   background-color: var(--primary-background-color);
+  color: var(--accent-color);
 }
