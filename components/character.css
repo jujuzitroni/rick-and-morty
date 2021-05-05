@@ -3,3 +3,9 @@
 *::before {
   box-sizing: border-box;
 }
+
+.characterCard {
+  background-color: grey;
+  width: 30em;
+  justify-self: center;
+}

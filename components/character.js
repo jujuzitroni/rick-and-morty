@@ -1,3 +1,4 @@
+import './character.css';
 import { createElement } from '../utils/elements';
 
 export function createCharacter({ image, name, status, species, origin }) {
