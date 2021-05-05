@@ -8,6 +8,8 @@ const characterSection = createElement('section', {
   className: 'resultsSection',
 });
 
+const notFoundText = createElement('p', { innerText: 'Character not found!' });
+
 const mainElement = createElement('main', {
   className: 'mainPage',
   children: [
@@ -16,11 +18,16 @@ const mainElement = createElement('main', {
       children: [
         createElement('h1', { innerText: 'Rick and Morty Fun' }),
         createElement('input', {
+          className: 'searchField',
           placeholder: 'search name',
+          autofocus: true,
           oninput: debounce((event) => {
             removeAllChildren(characterSection);
             const search = event.target.value;
             getCharacters(search).then((characters) => {
+              if (characters.length === 0) {
+                characterSection.append(notFoundText);
+              }
               characterSection.append(...characters.map(createCharacter));
             });
           }, 300),
