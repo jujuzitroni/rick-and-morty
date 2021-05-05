@@ -1,6 +1,35 @@
 import './style.css';
+import { createElement } from './utils/elements';
+import { createCharacter } from './components/character';
+import { getCharacters } from './utils/api';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+getCharacters().then((characters) => {
+  characterSection.append(...characters.map(createCharacter));
+});
+
+const characterSection = createElement('section', {
+  className: 'resultsSection',
+});
+
+const mainElement = createElement('main', {
+  className: 'mainPage',
+  children: [
+    createElement('header', {
+      className: 'hero',
+      children: [
+        createElement('h1', { innerText: 'Rick and Morty Fun' }),
+        createElement('input', { placeholder: 'search name' }),
+      ],
+    }),
+    characterSection,
+
+    createElement('footer', {
+      className: 'footerSection',
+      children: [
+        createElement('p', { innerText: "look at me, I'm a footer!" }),
+      ],
+    }),
+  ],
+});
+
+document.querySelector('#app').append(mainElement);
