@@ -1,4 +1,4 @@
-import './characterDetails.module.css';
+import styles from './characterDetails.module.css';
 import { createElement } from '../utils/elements';
 
 export function createCharacterDetails({
@@ -11,7 +11,7 @@ export function createCharacterDetails({
   episode,
 }) {
   return createElement('div', {
-    className: 'characterCard__detail',
+    className: styles.characterCard__detail,
     children: [
       createElement('img', { src: image }),
       createElement('h2', { innerText: name }),

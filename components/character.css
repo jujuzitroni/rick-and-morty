@@ -4,9 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-text-color: #f4a261;
+  --secondary-text-color: #e9c46a;
+  --primary-background-color: #264653;
+  --secondary-background-color: #2a9d8f;
+  --accent-color: #e76f51;
+}
+
 .characterCard {
-  background-color: grey;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
   width: 30em;
+  border-radius: 0.5em;
   justify-self: center;
   margin-bottom: 2rem;
+}
+
+.characterCard__link {
+  text-decoration: none;
+  display: block;
+  color: var(--accent-color);
 }

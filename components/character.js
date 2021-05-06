@@ -5,11 +5,11 @@ export function createCharacter({ id, image, name, status, species, origin }) {
   return createElement('div', {
     className: 'characterCard',
     children: [
-      createElement('p', { innerText: id }),
       createElement('img', { src: image }),
       createElement('a', {
         href: `/details.html?id=${id}`,
         innerText: 'Character Details',
+        className: 'characterCard__link',
       }),
       createElement('h2', { innerText: name }),
       createElement('h3', { innerText: status }),
