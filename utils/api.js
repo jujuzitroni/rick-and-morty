@@ -15,3 +15,15 @@ export async function getCharacters(name) {
   const data = await response.json();
   return data.results;
 }
+
+export async function getCharacter(charID) {
+  const promise = fetch(`https://rickandmortyapi.com/api/character/${charID}`);
+
+  const response = await promise;
+  if (response.status === 404) {
+    return {};
+  }
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
